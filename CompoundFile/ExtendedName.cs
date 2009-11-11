@@ -85,5 +85,70 @@ namespace CompoundFile
             }
             return sb.ToString();
         }
+
+        /// <summary>
+        /// Creates extended name from string.
+        /// </summary>
+        /// <param name="name">String.</param>
+        /// <returns>Extended name.</returns>
+        public static ExtendedName FromString(string name)
+        {
+            return new ExtendedName(name);
+        }
+
+        /// <summary>
+        /// Creates extended name from escaped string.
+        /// </summary>
+        /// <seealso cref="ToEscapedString"/>
+        /// <param name="name">Escaped string.</param>
+        /// <returns>Extended name.</returns>
+        public static ExtendedName FromEscapedString(string name)
+        {
+            StringBuilder sb = new StringBuilder();
+            int i = 0;
+            while (i < name.Length)
+            {
+                if (name[i] != '\\')
+                    sb.Append(name[i]);
+                else
+                {
+                    if (i + 6 > name.Length || name[i + 1] != 'u')
+                        throw new FormatException("Invalid escaped string format");
+                    ushort code = UInt16.Parse(name.Substring(i + 2, 4), System.Globalization.NumberStyles.AllowHexSpecifier);
+                    sb.Append((char)code);
+                }                    
+            }
+            return new ExtendedName(sb.ToString());
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = name.Length;
+            for (int i = 0; i < name.Length; i++)
+            {
+                hash ^= name[i];
+            }
+            return hash;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return this == (ExtendedName)obj;
+        }
+
+        public static bool operator ==(ExtendedName n1, ExtendedName n2)
+        {
+            if(n1.name.Length != n2.name.Length) return false;
+            for (int i = 0; i < n1.name.Length; i++)
+			{
+                if(n1.name[i] != n2.name[i]) return false;			 
+			}
+            return true;
+        }
+
+        public static bool operator !=(ExtendedName n1, ExtendedName n2)
+        {
+            return !(n1 == n2);
+        }
     }
 }

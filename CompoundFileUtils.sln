@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompoundFile", "CompoundFil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompoundFileUtils", "CompoundFileUtils\CompoundFileUtils.csproj", "{CF8CE1E3-EB5B-4BFE-9F8F-A417700BFEE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordFileReader", "WordFileReader\WordFileReader.csproj", "{4D864E4F-75F8-47AF-A3F7-BB49CB25279C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordFileDump", "WordFileDump\WordFileDump.csproj", "{900D3364-26F9-4E4C-9C07-9BC4BC6B411C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{CF8CE1E3-EB5B-4BFE-9F8F-A417700BFEE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF8CE1E3-EB5B-4BFE-9F8F-A417700BFEE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF8CE1E3-EB5B-4BFE-9F8F-A417700BFEE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D864E4F-75F8-47AF-A3F7-BB49CB25279C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D864E4F-75F8-47AF-A3F7-BB49CB25279C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D864E4F-75F8-47AF-A3F7-BB49CB25279C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D864E4F-75F8-47AF-A3F7-BB49CB25279C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{900D3364-26F9-4E4C-9C07-9BC4BC6B411C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900D3364-26F9-4E4C-9C07-9BC4BC6B411C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900D3364-26F9-4E4C-9C07-9BC4BC6B411C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900D3364-26F9-4E4C-9C07-9BC4BC6B411C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -147,6 +147,32 @@ namespace CompoundFile
         }
 
         /// <summary>
+        /// Find storage by name.
+        /// </summary>
+        /// <param name="name">Storage name</param>
+        /// <returns>Found storage or null</returns>
+        public CompoundFileStorage FindStorage(ExtendedName name)
+        {
+            foreach(CompoundFileStorage storage in GetStorages())
+            {
+                if (storage.Name == name)
+                    return storage;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Find storage by name.
+        /// </summary>
+        /// <param name="name">Storage name</param>
+        /// <returns>Found storage or null</returns>
+        public CompoundFileStorage FindStorage(string name)
+        {
+            return FindStorage(ExtendedName.FromString(name));
+        }
+
+    
+        /// <summary>
         /// Creates the stream to access/read the data.
         /// </summary>
         /// <returns>Stream object.</returns>
